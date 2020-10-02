@@ -17,7 +17,20 @@ namespace NewCalculator.Test.Unit
         [TestCase(0, 2.8, 2.8)]
         public void Add_TwoPositives_CorrectResult(double addend1, double addend2, double expected)
         {
+            // Act og Assert i samme kodelinje
             Assert.That(_uut.Add(addend1, addend2), Is.EqualTo(expected));
         }
+
+        [TestCase(2.2, 2.8, 5)]
+        [TestCase(0, 2.8, 2.8)]
+        public void Add_TwoPositives_AccumulatorCorrect(double addend1, double addend2, double expected)
+        {
+            // Act
+            _uut.Add(addend1, addend2);
+            // Assert
+            Assert.That(_uut.Accumulator, Is.EqualTo(expected));
+        }
+
+
     }
 }
