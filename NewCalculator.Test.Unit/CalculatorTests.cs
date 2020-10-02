@@ -13,10 +13,11 @@ namespace NewCalculator.Test.Unit
             _uut = new Calculator();
         }
 
-        [Test]
-        public void Add_TwoPositives_CorrectResult()
+        [TestCase(2.2, 2.8, 5)]
+        [TestCase(0, 2.8, 2.8)]
+        public void Add_TwoPositives_CorrectResult(double addend1, double addend2, double expected)
         {
-            Assert.That(_uut.Add(2.2, 2.8), Is.EqualTo(5));
+            Assert.That(_uut.Add(addend1, addend2), Is.EqualTo(expected));
         }
     }
 }
