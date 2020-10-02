@@ -31,6 +31,15 @@ namespace NewCalculator.Test.Unit
             Assert.That(_uut.Accumulator, Is.EqualTo(expected));
         }
 
+        [TestCase(5, 12)]
+        public void Add_SingleParameter_CorrectResult(double newaddend, double expected)
+        {
+            // Arrange - set accumulator to known value 7
+            _uut.Add(3, 4);
+            // Act + assert
+            Assert.That(_uut.Add(newaddend), Is.EqualTo(expected));
+        }
+
 
     }
 }
